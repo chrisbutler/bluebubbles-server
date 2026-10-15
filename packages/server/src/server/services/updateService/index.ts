@@ -52,6 +52,19 @@ export class UpdateService extends Loggable {
     }
 
     async checkForUpdate({ showNoUpdateDialog = false, showUpdateDialog = true } = {}): Promise<boolean> {
+        // Official releases do not carry this experimental emoji protocol/helper.
+        if (this.currentVersion.includes("-emoji.")) {
+            this.hasUpdate = false;
+            if (showNoUpdateDialog) {
+                await dialog.showMessageBox(this.window, {
+                    type: "info",
+                    title: "Custom BlueBubbles Build",
+                    message: "This emoji test build uses manual updates.",
+                    detail: "Install a matching server, helper and bridge build together."
+                });
+            }
+            return false;
+        }
         let releasesRes: AxiosResponse<any, any>;
 
         try {

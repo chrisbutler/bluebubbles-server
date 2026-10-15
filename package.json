@@ -1,6 +1,6 @@
 {
     "name": "bluebubbles-server",
-    "version": "1.9.9",
+    "version": "1.9.9-emoji.4",
     "description": "BlueBubbles Server is the app that powers the BlueBubbles app ecosystem",
     "private": true,
     "workspaces": [
@@ -21,12 +21,11 @@
         "url": "https://www.github.com/BlueBubblesApp/BlueBubbles-Server/issues"
     },
     "homepage": "https://www.bluebubbles.app",
-    "devEngines": {
-        "node": "20.11.x",
-        "npm": ">=10.x",
-        "python": ">=3.10.x"
-    },
     "devDependencies": {
         "concurrently": "^7.0.0"
+    },
+    "engines": {
+        "node": ">=20",
+        "npm": ">=10"
     }
 }
