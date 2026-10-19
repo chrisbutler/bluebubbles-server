@@ -127,7 +127,8 @@ export abstract class DylibPlugin extends Loggable {
                                 DYLD_INSERT_LIBRARIES: `${path.join(
                                     path.dirname(this.dylibPath),
                                     "ChatKitLoader.dylib"
-                                )}:${this.dylibPath}`
+                                )}`,
+                                BLUEBUBBLES_HELPER_PATH: this.dylibPath
                             }
                         }
                     });
